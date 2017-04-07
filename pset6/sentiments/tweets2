@@ -1,0 +1,113 @@
+#!/usr/bin/env python3
+# search all tweets, including follower
+
+import os
+import sys
+from twython import Twython, TwythonError
+
+from analyzer import Analyzer
+from termcolor import colored
+
+def main():
+
+    # ensure proper usage
+    if len(sys.argv) > 3:
+        sys.exit("Usage: ./tweets @user follower")
+
+    # absolute paths to lists
+    positives = os.path.join(sys.path[0], "positive-words.txt")
+    negatives = os.path.join(sys.path[0], "negative-words.txt")
+
+    # instantiate analyzer
+    analyzer = Analyzer(positives, negatives)
+
+    # get user tweets
+    twitter = Twython("0kIc3MIgZWTHBPFEMUznqBGvp","5dtvg0m1cD4epDvIdJShEYWarweEKx3LTtlMA4Nde4OgGUmTAQ", "544254475-7P5WNCKV8YsOn64JeunSKWUxnd0Q6ewrrJW3YwxB", "ZkejZAZt6OZ47sHkfyxHgNRG4tmkoyhTmk4zAk7cFxVvx")
+
+    # get follower list
+    # https://www.silkstream.net/blog/2014/06/playing-with-followers-with-twython-csv.html
+    # Creating an empty list, ready for our followers
+    if len(sys.argv) == 3:
+        followers = []
+        next_cursor = -1
+        while(next_cursor):
+        # Getting the user's followers (should all be 1 line)
+            get_followers = twitter.get_followers_list(screen_name=sys.argv[1],count=200,cursor=next_cursor)
+        # For each user returned from our get_followers
+            for follower in get_followers['users']:
+        # Add their screen name to our followers list
+                followers.append(follower['screen_name']) # remove .encode('utf-8') removes b'' prefix
+                # followers.append(follower['screen_name'].encode('utf-8'))
+                next_cursor = get_followers['next_cursor'] # assigns the current cursor to next_cursor
+        # print(len(followers))
+        sentiments(followers, twitter, positives, negatives, analyzer)
+    else:
+        followers = [sys.argv[1]]
+        sentiments(followers, twitter, positives, negatives, analyzer)
+    # from https://stackoverflow.com/questions/21043674/how-do-i-return-more-than-100-twitter-search-results-with-twython
+
+    # Number of tweets the user has made
+    # print(tweets)
+
+    # for i in range(2):
+    #     tweets = twitter.get_user_timeline(screen_name=sys.argv[1], count=200)
+
+    #     for i in range(len(tweets)):
+    #         # print(i)
+    #             # print(tweets[i]['text'].encode('utf-8').strip())
+    #         score = analyzer.analyze(tweets[i]['text'].encode('utf-8').lower())
+    #         if score > 0.0:
+    #             # print(colored(":)", "green"))
+    #             green = green + 1
+    #         elif score < 0.0:
+    #             # print(colored(":(", "red"))
+    #             red = red + 1
+    #         else:
+    #             # print(colored(":|", "yellow"))
+    #             yellow = yellow + 1
+
+def sentiments(users, twitter, positives, negatives, analyzer):
+    for user in users:
+        tweets = []
+        try:
+            user_timeline = twitter.get_user_timeline(screen_name=user,count=200)
+        except TwythonError as e:
+            print(e)
+        # print(len(user_timeline))
+        for tweet in user_timeline:
+            # Add whatever you want from the tweet, here we just add the text
+            tweets.append(tweet['text'])
+        # Count could be less than 200, see:
+        # https://dev.twitter.com/discussions/7513
+        while len(user_timeline) != 0: 
+            try:
+                user_timeline = twitter.get_user_timeline(screen_name=user,count=200,max_id=user_timeline[len(user_timeline)-1]['id']-1)
+            except TwythonError as e:
+                print(e)
+            # print(len(user_timeline))
+            for tweet in user_timeline:
+                # Add whatever you want from the tweet, here we just add the text
+                tweets.append(tweet['text'])
+
+        # analyze word
+        green = 0
+        red = 0
+        yellow = 0
+        for i in range(len(tweets)):
+        # print(i)
+            # print(tweets[i]['text'].encode('utf-8').strip())
+            score = analyzer.analyze(tweets[i].lower())
+            if score > 0.0:
+                # print(colored(":)", "green"))
+                green = green + 1
+            elif score < 0.0:
+                # print(colored(":(", "red"))
+                red = red + 1
+            else:
+                # print(colored(":|", "yellow"))
+                yellow = yellow + 1
+
+        print(user, green, red, yellow)
+
+if __name__ == "__main__":
+    main()

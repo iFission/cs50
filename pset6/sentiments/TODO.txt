@@ -1,0 +1,73 @@
+TODO
+twitter:
+export API_KEY=0kIc3MIgZWTHBPFEMUznqBGvp
+export API_SECRET=5dtvg0m1cD4epDvIdJShEYWarweEKx3LTtlMA4Nde4OgGUmTAQ
+
+/smile
+/returns int from analyzer
+/prints colored emoticon
+
+tweets
+/takes 1 argument, twitter name
+query twitter for most recent 50 tweets
+output each tweet's
+	score
+	text
+	color in green/red/yellow
+
+analyzer.py
+/tokenizer
+/	split tweet (140 chr str object) into a list of words (str objects)
+/2 methods
+/__init__
+/	takes 3 arguments, self, positive, negative (text file containing words)
+/	loads words to memory
+/	analyze can access
+/analyze
+/	takes 2 arguments, self, str
+/	analyze word in text
+/		1 if positive
+/		-1 if negative
+/		0 if neutral
+/	calculate sum for entire text
+/	returns int
+
+/helpers.py
+/chart
+/	takes 3 arguments, positive, negative and neutral, int or float
+/	outputs html as str for pie chart
+/get_user_timeline
+/	outputs a list of tweets as str
+/	uses Twython with twitter api
+/	requires 2 environment variables, api_key, api_secret
+
+application.py
+controller for flask(microframework for web development)
+2 end points, /, /search
+queries twitter API for most recent 100 tweets (or thereof)
+/classify each tweet as positive/negative/neutral
+/generate a chart with percentage
+
+templates/index.html
+url_for, flask function, to which URL the form should be submitted
+
+templates/search.html
+renders username and pie chart
+
+templates.layout.html
+layout for index.html and search.html
+uses Bootstrap to override browsers' default aesthetics
+
+requirements.txt
+required libraries/modules
+
+submit:
+/mario.py
+/ sentiments/analyzer.py
+ sentiments/application.py
+/ sentiments/tweets
+
+update50
+cd ~/workspace/pset6/
+submit50 2017/x/pset6
+https://newforms.cs50.net/2017/x/psets/6

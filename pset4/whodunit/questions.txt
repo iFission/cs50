@@ -1,0 +1,16 @@
+1.  Adds library for integer data types
+2.  To store integer values
+3.  
+BYTE: 1 byte (8 bit unsigned value)
+DWORD: 4 byte (32 bit unsigned integer)
+LONG: 4 byte (32 bit signed integer)
+WORD: 2 byte (16 bit unsigned integer)
+4.  BM
+5. bfSize is the size of bitmap file header, while biSize is that of bitmap info header
+6. The file is a top-down DIB (device-independent bitmap)
+7. biBitCount
+8. The program might not be able to write to the disk, thus not creating a output file
+9. We only need to read 1 element
+10. 3
+11. Move the file position indicator
+12. Returns the current file position

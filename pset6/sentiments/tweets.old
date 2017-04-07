@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+# oldest implementation, without using helper
+
+import os
+import sys
+
+from twython import Twython, TwythonError
+from analyzer import Analyzer
+from termcolor import colored
+
+def main():
+
+    # ensure proper usage
+    if len(sys.argv) != 2:
+        sys.exit("Usage: ./tweets @user")
+
+    # absolute paths to lists
+    positives = os.path.join(sys.path[0], "positive-words.txt")
+    negatives = os.path.join(sys.path[0], "negative-words.txt")
+
+    # instantiate analyzer
+    analyzer = Analyzer(positives, negatives)
+
+    # get user tweets
+    twitter = Twython("0kIc3MIgZWTHBPFEMUznqBGvp", "5dtvg0m1cD4epDvIdJShEYWarweEKx3LTtlMA4Nde4OgGUmTAQ")
+    try:
+        tweets = twitter.get_user_timeline(screen_name=sys.argv[1], count=50)
+        # print(tweets)
+    except TwythonError as e:
+        print(e)
+
+    # analyze tweets
+    green, red, yellow = 0, 0, 0
+    for i in range(len(tweets)):
+        # print(i)
+        score = analyzer.analyze(tweets[i]['text'].encode('utf-8').lower())
+        if score > 0.0:
+            # print(colored(":)", "green"))
+            green = green + 1
+        elif score < 0.0:
+            # print(colored(":(", "red"))
+            red = red + 1
+        else:
+            # print(colored(":|", "yellow"))
+            yellow = yellow + 1
+    print(green, red, yellow)
+
+if __name__ == "__main__":
+    main()
