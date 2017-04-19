@@ -1,5 +1,8 @@
 from flask import Flask, redirect, render_template, request, url_for
 
+import os
+import sys
+
 import helpers
 from analyzer import Analyzer
 
@@ -20,11 +23,18 @@ def search():
     # get screen_name's tweets
     tweets = helpers.get_user_timeline(screen_name)
 
+    # absolute paths to lists
+    positives = os.path.join(sys.path[0], "positive-words.txt")
+    negatives = os.path.join(sys.path[0], "negative-words.txt")
+
+    # instantiate analyzer
+    analyzer = Analyzer(positives, negatives)
+
     # analyze tweets
     green, red, yellow = 0, 0, 0
     for i in range(len(tweets)):
-        # print(i)
-        score = analyzer.analyze(tweets[i]['text'].encode('utf-8').lower())
+
+        score = analyzer.analyze(tweets[i].encode('utf-8').lower())
         if score > 0.0:
             # print(colored(":)", "green"))
             green = green + 1
@@ -36,7 +46,7 @@ def search():
             yellow = yellow + 1
 
     # positive, negative, neutral = 0.0, 0.0, 100.0 # initialize as float
-    positive, negative, neutral = float(green/len(tweets))*100, float(red/len(tweets))*100, float(yellow/len(tweets))*100 
+    positive, negative, neutral = float(green/len(tweets))*100, float(red/len(tweets))*100, float(yellow/len(tweets))*100
 
     # generate chart
     chart = helpers.chart(positive, negative, neutral)

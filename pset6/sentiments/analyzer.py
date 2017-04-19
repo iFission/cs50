@@ -1,4 +1,4 @@
-import nltk
+from nltk.tokenize import TweetTokenizer
 
 class Analyzer():
     """Implements sentiment analysis."""
@@ -12,12 +12,11 @@ class Analyzer():
 
     def analyze(self, text):
         """Analyze text for sentiment, returning its score."""
-        # print(text)
         # tokenizer splits text into chunks
-        tokenizer = nltk.tokenize.TweetTokenizer()
+        # tokenizer = nltk.tokenize.TweetTokenizer() # assigns tokenizer a local name from module
+        tokenizer = TweetTokenizer() # instantiate the class
         tokens = tokenizer.tokenize(text)
-        # tokens = nltk.tokenize.TweetTokenizer.tokenize(text)
-        # print(tokens)
+        # tokens = nltk.tokenize.TweetTokenizer.tokenize(text) # does not work, did not instantiate class
         sum = 0
         for i in range(len(tokens)):
             if tokens[i] in self.pos:

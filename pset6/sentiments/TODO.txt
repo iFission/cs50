@@ -1,3 +1,9 @@
+RUN APP:
+export FLASK_APP=application.py
+export API_KEY=0kIc3MIgZWTHBPFEMUznqBGvp
+export API_SECRET=5dtvg0m1cD4epDvIdJShEYWarweEKx3LTtlMA4Nde4OgGUmTAQ
+flask run
+
 TODO
 twitter:
 export API_KEY=0kIc3MIgZWTHBPFEMUznqBGvp
@@ -44,9 +50,11 @@ analyzer.py
 application.py
 controller for flask(microframework for web development)
 2 end points, /, /search
-queries twitter API for most recent 100 tweets (or thereof)
+/queries twitter API for most recent 100 tweets (or thereof)
 /classify each tweet as positive/negative/neutral
 /generate a chart with percentage
+run with:
+flask run --host:0.0.0.0 --port:8080
 
 templates/index.html
 url_for, flask function, to which URL the form should be submitted
