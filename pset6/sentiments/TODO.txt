@@ -1,8 +1,33 @@
-RUN APP:
+RUN APP
+pip3 install --user -r requirements.txt
+brew install flask
 export FLASK_APP=application.py
 export API_KEY=0kIc3MIgZWTHBPFEMUznqBGvp
 export API_SECRET=5dtvg0m1cD4epDvIdJShEYWarweEKx3LTtlMA4Nde4OgGUmTAQ
 flask run
+
+FILES
+application.py
+controller for flask(microframework for web development)
+2 end points, /, /search
+/queries twitter API for most recent 100 tweets (or thereof)
+/classify each tweet as positive/negative/neutral
+/generate a chart with percentage
+run with:
+flask run --host:0.0.0.0 --port:8080
+
+templates/index.html
+url_for, flask function, to which URL the form should be submitted
+
+templates/search.html
+renders username and pie chart
+
+templates.layout.html
+layout for index.html and search.html
+uses Bootstrap to override browsers' default aesthetics
+
+requirements.txt
+required libraries/modules
 
 TODO
 twitter:
@@ -47,27 +72,6 @@ analyzer.py
 /	uses Twython with twitter api
 /	requires 2 environment variables, api_key, api_secret
 
-application.py
-controller for flask(microframework for web development)
-2 end points, /, /search
-/queries twitter API for most recent 100 tweets (or thereof)
-/classify each tweet as positive/negative/neutral
-/generate a chart with percentage
-run with:
-flask run --host:0.0.0.0 --port:8080
-
-templates/index.html
-url_for, flask function, to which URL the form should be submitted
-
-templates/search.html
-renders username and pie chart
-
-templates.layout.html
-layout for index.html and search.html
-uses Bootstrap to override browsers' default aesthetics
-
-requirements.txt
-required libraries/modules
 
 submit:
 /mario.py

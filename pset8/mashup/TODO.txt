@@ -1,0 +1,271 @@
+> TODO
+/ DONE
+? question
+< bonus
+
+RUN APP
+pip3 install --user -r requirements.txt
+pip3 install --user requests cs50
+export API_KEY=AIzaSyA_gzMENdlKXx7urChR6SZftnRHBb4Relg
+export FLASK_APP=application.py
+ln -s /Users/WEIJIE/Library/Python/3.6/bin/flask /usr/local/bin
+flask run
+
+mashup
+implement a website that lets user search for articles atop a map
+using google maps and google news
+
+BACKGROUND
+google maps
+https://developers.google.com/maps/documentation/javascript/
+getting started https://developers.google.com/maps/documentation/javascript/tutorial
+markers https://developers.google.com/maps/documentation/javascript/markers
+info windows https://developers.google.com/maps/documentation/javascript/infowindows
+
+google news
+parameters http://i-tweak.blogspot.com/2013/10/google-news-search-parameters-missing.html
+url example
+	https://news.google.com/news/section?cf=all&pz=1&geo=Cambridge,+Massachusetts&ned=us&redirect=true
+	https://news.google.com/news/section?cf=all&pz=1&geo=New+Haven,+Connecticut&ned=us&redirect=true
++ = space
+http://news.google.com/news/
+	section?
+		q= // query keyword
+		hl= // language, eg en
+		cf=
+		pz=
+		geo= // inputs geo location, accepts place names, postal code
+		ned= // location, eg us
+		redirect=
+
+rss
+	output=rss
+	https://news.google.com/news/feeds?geo=02138&output=rss
+	channel>title,description,link,item>guid,title,link,description,category,pubDate
+	based on XML
+	parse rss feed using python
+	return title and link via Ajax as JSON
+news
+	bulleted list of articles' titles and links
+
+jQuery
+	http://learn.jquery.com/using-jquery-core/document-ready/
+	http://learn.jquery.com/using-jquery-core/selecting-elements/
+	http://learn.jquery.com/ajax/jquery-ajax-methods/
+
+typeahead.js
+	twitter's library plugin, in jQuery
+	adds support for autocompletion to html text fields
+	http://twitter.github.io/typeahead.js/examples/
+		The Basics
+		Custom Templates
+		Scrollable Dropdown Menu
+	https://github.com/corejavascript/typeahead.js/blob/master/doc/jquery_typeahead.md
+	use https://github.com/corejavascript/typeahead.js
+
+FILES
+templates/index.html
+only html page
+head
+	contains css and javascript libraries
+body
+	div, id of map-canvas
+	inject map into div
+	contains form
+		input, type=text, id=q
+		takes input from user
+
+static/styles.css
+style for ui
+
+scripts.js
+front-end ui
+map
+	contain reference to the map to be instantiated
+marker
+	an array that contains references to any markers
+info
+	reference to into window to display links to articles
+styles
+	array of 2 objects
+	https://developers.google.com/maps/documentation/javascript/styling
+	[] array
+	{} object
+options
+	keys and values used to configure map further
+convas
+	id=map-canvas
+	$("#map-canvas") returns jQuery object
+	$("#map-canvas").get(0) returns actual DOM node
+new google.maps.Map(canvas, options); // instantiate new map, injectting it into the DOM node specified by canvas, configured per options
+congigure, called after the map is loaded
+	addMarker
+>		add a marker(icon) to the map
+	configure
+		add listeners for events
+			google.maps.event.addListener(map, "dragend", function() { // listen for end of dragging, then call functino
+			    update();
+			});
+		dragstart, hide all markers
+		https://github.com/corejavascript/typeahead.js/blob/master/doc/jquery_typeahead.md
+>		configure typehead
+			highlight
+			minLength
+			source
+			search
+			templates
+			suggestion
+			Handlebars.compile http://handlebarsjs.com/
+				templating language for JS to create template
+>				<div>TODO</DIV>
+>				<div>{{place_name}}, {{admin_name1}}, {{postal_code}}</div>
+		$("#q").on("typeahead:selected", function(eventObject, suggestion, name) {
+		    ...
+		    map.setCenter({lat: parseFloat(suggestion.latitude), lng: parseFloat(suggestion.longitude)});
+		    ...
+		    update();
+		});
+		// for html element of id=q, when event typeahead:selected is detected (when user selects an entry from dropdown)
+		// call an anonymous  function that uses that entry as suggestion object
+		// object most contain latitude, longitude
+		// setCenter to recenter the map
+		// update markers
+
+?		$("#q").focus(function(eventData) {
+		    info.close();
+		});
+		http://api.jquery.com/focus/
+
+		document.addEventListener("contextmenu", function(event) {
+		    event.returnValue = true;
+		    event.stopPropagation && event.stopPropagation();
+		    event.cancelBubble && event.cancelBubble();
+		}, true);
+		// enables right click in google maps
+
+>	removeMarkers
+		remove any/all markers from the map
+	search
+		called by typeahead during user input in textbox
+	showInfo
+		1 arg (marker)
+		shows a spinning icon
+		creates a string of HTML, passes it to setContent
+	update
+		find the boundaries of corners (top right, bottom left)
+		pass coordinate to /update via GET
+		GET /update?ne=37.45215513235332%2C-122.03830380859375&q=&sw=37.39503397352173%2C-122.28549619140625 HTTP/1.1
+		%2C = ','
+		/update returns JSON array of places in the boundaries
+		calls done, passing data
+		removes all markers, iteratively add new markers for each city
+
+application.py
+@index
+@articles
+@search
+@update
+	backend
+	output JSON array of ~10 cities
+
+helpers.py
+lookup
+	queries google news  for articles
+	fallback on the onion
+
+SPECIFICATION
+mashup.db
+table places
+/	country code      : iso country code, 2 characters
+/	postal code       : varchar(20)
+/	place name        : varchar(180)
+/	admin name1       : 1. order subdivision (state) varchar(100)
+/	admin code1       : 1. order subdivision (state) varchar(20)
+/	admin name2       : 2. order subdivision (county/province) varchar(100)
+/	admin code2       : 2. order subdivision (county/province) varchar(20)
+/	admin name3       : 3. order subdivision (community) varchar(100)
+/	admin code3       : 3. order subdivision (community) varchar(20)
+/	latitude          : estimated latitude (wgs84)
+/	longitude         : estimated longitude (wgs84)
+/	accuracy          : accuracy of lat/lng from 1=estimated to 6=centroid
+
+/	no id field
+
+	$ sqlite3 mashup.db
+
+CREATE TABLE 'places' (
+'country_code' TEXT NOT NULL,
+'postal_code' VARCHAR(20),
+'place_name' VARCHAR(180),
+'admin_name1' VARCHAR(100),
+'admin_code1' VARCHAR(20),
+'admin_name2' VARCHAR(100),
+'admin_code2' VARCHAR(20),
+'admin_name3' VARCHAR(100),
+'admin_code3' VARCHAR(20),
+'latitude' REAL,
+'longitude' REAL,
+'accurary' INT
+)
+;
+
+	import database
+	.separator "\t"
+	.import US.txt places
+
+	check successful import
+	wc -l US.txt // counts number of lines
+	SELECT COUNT(*) FROM places;
+
+
+
+application.py
+@articles
+/	output JSON array of objects
+/		find title, link
+
+/	parameter geo, passed into /articles
+	staff solution: http://pset8.cs50.net/articles?geo=02138, inspect with HTTP request from Chrome network
+	check: https://ide50-username.cs50.io/articles?geo=02138
+@search
+/	output JSON array of objects
+/	each represent a row from places, that matches the value of q (city, state, postal code)
+/		min support postal code
+/		q = request.args.get("q") + "%" // append wildcard to q
+/		db.execute("SELECT * FROM places WHERE postal_code LIKE :q", q=q)
+		https://ide50-username.cs50.io/search?q=02138
+/		LIKE
+/		support city/state
+			OR, AND
+	staff solution: http://pset8.cs50.net/search?q=02138, inspect with HTTP request from Chrome network
+@update
+	backend
+	output JSON array of ~10 cities
+
+scripts.js
+configure
+>	display <div>{{place_name}}, {{admin_name1}}, {{postal_code}}</div>
+addMarker
+>	add a marker for place, place=js object, represents a row from places
+	https://developers.google.com/maps/documentation/javascript/markers
+>	on click
+>		open info window
+>		anchored at same place
+>		contains
+>			underscored list of links of articles
+<	different icon
+	https://developers.google.com/maps/documentation/javascript/markers#simple_icons
+	http://www.lass.it/Web/viewer.aspx?id=4
+	https://mapicons.mapsmarker.com/
+removeMarkers
+>	remove all markers
+>	use addMarker to modify global variables, so removeMarkers can access the variables
+
+Testing
+No check50 for this one, but be sure to try to "break" your own site, as by
+	searching for cities that don’t exist,
+	clicking markers for cities that don’t have any articles,
+	dragging and zooming in and out to update your map’s markers, and
+	searching with potentially dangerous characters like ' and ;.
+
+staff solution: http://pset8.cs50.net, inspect with HTTP request from Chrome network

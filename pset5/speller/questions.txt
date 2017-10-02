@@ -1,0 +1,16 @@
+0.  maximum length for a word
+1.  gets resource usage
+2.  16
+3.  avoid making a copy of the variables, save memory
+4.  main reads every character from text file, check if they are alpha or ', append to form a complete word ending with \n
+5.  fscanf with scan the whole string, the string may contain unwanted things like number
+6.  so that the functions will not be able to modify the word/dictionary
+
+
+0. What is pneumonoultramicroscopicsilicovolcanoconiosis?
+1. According to its man page, what does getrusage do?
+2. Per that same man page, how many members are in a variable of type struct rusage ?
+3. Why do you think we pass before and after by reference (instead of by value) to calculate , even though we’re not changing their contents?
+4. Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. In other words, convince us that you indeed understand how that function’s for loop works.
+5. Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string like "%s" to read whole words at a time? Put another way, what problems might arise by relying on fscanf alone?
+6. Why do you think we declared the parameters for check and load as const ?
