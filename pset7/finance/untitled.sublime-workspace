@@ -1,0 +1,429 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"func",
+				"decorated_function"
+			],
+			[
+				"m",
+				"m"
+			],
+			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "application.py",
+			"settings":
+			{
+				"buffer_size": 7310,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/register.html",
+			"settings":
+			{
+				"buffer_size": 869,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "helpers.py",
+			"settings":
+			{
+				"buffer_size": 2515,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 173.0,
+		"last_filter": "map",
+		"selected_items":
+		[
+			[
+				"map",
+				"View: Toggle Minimap"
+			],
+			[
+				"reid",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"warp",
+				"Word Wrap: Toggle"
+			],
+			[
+				"re",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"snipp",
+				"Snippet: Method"
+			],
+			[
+				"tab",
+				"View: Toggle Tabs"
+			],
+			[
+				"line",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"side",
+				"View: Toggle Side Bar"
+			],
+			[
+				"toggle",
+				"View: Toggle Tabs"
+			],
+			[
+				"status",
+				"View: Toggle Status Bar"
+			],
+			[
+				"convert",
+				"Convert Case: Title Case"
+			],
+			[
+				"uppr",
+				"Convert Case: Upper Case"
+			],
+			[
+				"reindent",
+				"Indentation: Reindent Lines"
+			]
+		],
+		"width": 398.0
+	},
+	"console":
+	{
+		"height": 133.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": true,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance"
+	],
+	"file_history":
+	[
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset6/sentiments/TODO.txt",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/templates/layout.html",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/templates/apology.html",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/requirements.txt",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/helpers.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/finance.db",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/MS2.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/MS3.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/MS.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/sentiments/tweets",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/sentiments/tweets.old",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/input",
+		"/Users/WEIJIE/Library/Application Support/Sublime Text 3/Packages/enlightened.tmTheme",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/greedy.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/mario2.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/mario.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/credit.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/vigenere.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/gen.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/crack.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/caesar.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/get_positive_int.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week1/pset1/f2c*_2.c",
+		"/Users/WEIJIE/Library/Application Support/Sublime Text 3/Packages/User/Distraction Free.sublime-settings",
+		"/Users/WEIJIE/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"hash1",
+			"hash",
+			"register",
+			"render",
+			"url",
+			"register",
+			"index",
+			"url_for",
+			"@",
+			", ",
+			"cat",
+			"ex",
+			"0kIc3MIgZWTHBPFEMUznqBGvp",
+			"tempMatrix",
+			"e",
+			"tempMatrix",
+			"rmatrix2",
+			"reducedRow",
+			"k",
+			"search",
+			"results_and_print"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"tempMatrix"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "application.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7310,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4278,
+								4278
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1479.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "templates/register.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 869,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								607,
+								607
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "helpers.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2515,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								699,
+								699
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 98.0
+	},
+	"output.find_results":
+	{
+		"height": 98.0
+	},
+	"pinned_build_system": "",
+	"project": "untitled.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"helpers.py"
+			],
+			[
+				"21",
+				"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/MS.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 398.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"main"
+			]
+		],
+		"width": 388.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": false,
+	"template_settings":
+	{
+	}
+}

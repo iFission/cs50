@@ -1,0 +1,767 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"func",
+				"decorated_function"
+			],
+			[
+				"m",
+				"m"
+			],
+			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset5/speller/TODO.txt",
+			"settings":
+			{
+				"buffer_size": 1024,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dictionary.c",
+			"settings":
+			{
+				"buffer_size": 1594,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dictionary 2.c",
+			"settings":
+			{
+				"buffer_size": 4289,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 398.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"comm",
+				"Toggle Block Comment"
+			],
+			[
+				"jin",
+				"Set Syntax: HTML (Jinja2)"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"jinja",
+				"Set Syntax: Jinja2"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"sidebar",
+				"View: Toggle Side Bar"
+			],
+			[
+				"material",
+				"Material Theme: Activate theme"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"term",
+				"Terminal: Open"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"disabl",
+				"Package Control: Disable Package"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"status",
+				"View: Toggle Status Bar"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"map",
+				"View: Toggle Minimap"
+			],
+			[
+				"war",
+				"Word Wrap: Toggle"
+			],
+			[
+				"snipp",
+				"Snippet: Method"
+			],
+			[
+				"tab",
+				"View: Toggle Tabs"
+			],
+			[
+				"line",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"side",
+				"View: Toggle Side Bar"
+			],
+			[
+				"toggle",
+				"View: Toggle Tabs"
+			],
+			[
+				"convert",
+				"Convert Case: Title Case"
+			],
+			[
+				"uppr",
+				"Convert Case: Upper Case"
+			],
+			[
+				"reindent",
+				"Indentation: Reindent Lines"
+			]
+		],
+		"width": 527.0
+	},
+	"console":
+	{
+		"height": 133.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": true,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset4/resize/resize.c",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset5/speller_trie/dictionaries/small",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset5/speller/dictionaries/small",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset5/speller/dictionaries/medium",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset5/speller_trie/dictionaries/large",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset5/speller/TODO.txt",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset5/speller_trie/dictionaries/medium",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset5/speller/dictionaries/large",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset5/speller/dictionary_old.c",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/finance.dump",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/application.old.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/templates/layout.html",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/finance.sublime-workspace",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/templates/apology_text.html",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/templates/sell.html",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/templates/apology.html",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/templates/register.html",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/templates/quote.html",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/templates/quoted.html",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/templates/login.html",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/templates/history.html",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/templates/index.html",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/templates/buy.html",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/finance.db",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/finance.original.db",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/finance.sublime-project",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/finance2.db",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/phpliteadmin.php",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/requirements.txt",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/untitled.sublime-workspace",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/application.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/helpers.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset7/finance/TODO.txt",
+		"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset6/sentiments/TODO.txt",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/MS2.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/MS3.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/MS.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/sentiments/tweets",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/sentiments/tweets.old",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/input",
+		"/Users/WEIJIE/Library/Application Support/Sublime Text 3/Packages/enlightened.tmTheme",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/greedy.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/mario2.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/mario.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/credit.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/vigenere.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/gen.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/crack.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/caesar.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/get_positive_int.py",
+		"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week1/pset1/f2c*_2.c",
+		"/Users/WEIJIE/Library/Application Support/Sublime Text 3/Packages/User/Distraction Free.sublime-settings",
+		"/Users/WEIJIE/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"inptr",
+			"SEEK_CUR",
+			"\");\n",
+			"current",
+			"e positive",
+			"must provide positive",
+			"share",
+			"    user_id = 11\n",
+			"# @login_required\n",
+			"return render_template",
+			"enter email",
+			"@login_required\n",
+			"    user_id = session[\"user_id\"]\n",
+			"user_id = session[\"user_id\"]",
+			"user_id = 11",
+			"    user_id = session[\"user_id\"]\n",
+			"session",
+			"@login_required",
+			"rows",
+			"share",
+			"<td>",
+			"td>",
+			"</td>",
+			"}}",
+			"{{",
+			"}}",
+			"tb",
+			"thead",
+			"form",
+			"buy",
+			"session['user_id']",
+			"\"",
+			"post",
+			"@",
+			", ",
+			"cat",
+			"ex",
+			"0kIc3MIgZWTHBPFEMUznqBGvp",
+			"tempMatrix",
+			"e",
+			"tempMatrix",
+			"rmatrix2",
+			"reducedRow",
+			"k",
+			"search",
+			"results_and_print"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"tempMatrix"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset5/speller/TODO.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1024,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								60,
+								101
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "dictionary.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1594,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								114,
+								114
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "dictionary 2.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4289,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								186,
+								186
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 98.0
+	},
+	"output.find_results":
+	{
+		"height": 98.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 98.0
+	},
+	"pinned_build_system": "",
+	"project": "speller_hash.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset5/speller/speller.c"
+			],
+			[
+				"21",
+				"/Volumes/Dropbox/Cloud/Backup/Code/CS50x 2017/week8/pset6/MS.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"/Volumes/Dropbox/Cloud/Backup/Code/cs50/pset5/speller/speller.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 398.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"main"
+			]
+		],
+		"width": 398.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

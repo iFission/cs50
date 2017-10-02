@@ -1,0 +1,193 @@
+RUN APP
+pip3 install --user -r requirements.txt
+export FLASK_APP=application.py
+flask run
+
+IMPLEMENT WEBSITE FOR USERS TO BUY AND SELL STOCKS
+manage portfolio
+check real stock price, value
+buy
+sell
+
+BACKGROUND
+Yahoo
+downloadable CSV stock quotes
+http://download.finance.yahoo.com/d/quotes.csv?s=NFLX&f=sl1d1t1c1ohgv&e=.csv
+s=COMPANY
+f=FIELD OF DATA
+USD
+
+FILES
+application.py
+disables caching of responses
+uses Jinja to format USD
+uses Flask to store sessions on local disk instead of its default cookie
+uses SQL module to read finance.db
+
+helpers.py
+apology, apology.html
+login_required
+lookup
+	takes symbol
+	returns stock quote in dict with 3 keys
+		str name
+		float price
+		str symbol
+usd
+	formats float as usd
+
+static/styles.css
+
+templates/
+login.html
+	stylised with Bootstrap
+apology.html
+	takes 2 arguments, top and bottom
+layout.html
+	stylised with Bootstrap
+	navbar
+	supports Flask's message flashing
+		relay messages from one @ to another
+
+SPECIFICATION
+finance.db
+table: users
+10000
+CREATE TABLE 'users' ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'username' TEXT NOT NULL, 'hash' TEXT NOT NULL, 'cash' NUMERIC NOT NULL DEFAULT 10000.00 );
+CREATE TABLE history ('user_id' INTEGER NOT NULL, 'symbol' TEXT NOT NULL, 'share' NUMERIC NOT NULL, 'price' REAL NOT NULL, 'time' DATETIME UNIQUE);
+-CREATE TABLE share ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'user_id' INTEGER NOT NULL, 'symbol' TEXT NOT NULL, 'share' INTEGER NOT NULL);
+CREATE UNIQUE INDEX 'username' ON "users" ("username");
+
+Sitemap:
+index
+	if not login>redirect to login
+	if logged in> redirect to index
+	shows table
+		quote>quoted
+		buy
+		sell
+		history
+
+done routes:
+@login
+	uses db.execute to query finance.db
+	pwd_context.verify compare hash
+	store user_id in session
+@logout
+	clear session
+
+TODO ROUTES
+@login_required prefix in helpers.py
+	ensures user is login first
+
+/@register
+/registers for account
+/	require username
+/		render apology if input is blank or already exist
+/	require password and repeat
+/		render apology if input is blank or no match
+/	INSERT
+/		insert new user into users table
+/		store hash of pw
+/		use pwd_context.encrypt
+/	create register.html similar to login.html
+
+@quote
+look up stock's current price
+/	require stock symbol
+/	submit via POST
+/	create  quote.html, quoted.html
+/	render quote.html via GET
+/	render quoted.html via POST
+/	embed values from lookup
+/	style output
+
+@buy
+buy stocks
+/	require stock symbol
+/		render apology if blank or no exist
+/		use lookup
+/	require number of shares
+/		render apology if not positive int
+/		use SELECT to check how much user has currently
+/		render apology if not enough cash
+/	add table in finance.db to track transaction
+/		who, action, what, when
+/		use appropriate SQLite types
+/		define UNIQUE on unique fields
+/		define non-UNIQUE on searcheable fields
+/			via SELECT with WHERE
+/			CREATE TABLE history ('user_id' INTEGER NOT NULL, 'symbol' TEXT NOT NULL, 'share' INTEGER NOT NULL, 'price' REAL NOT NULL, 'time' DATETIME UNIQUE);
+/
+/			INSERT INTO history ('user_id', 'symbol', 'share', 'price', 'time') VALUES (:id, :symbol, :share, :price, datetime('now'));
+
+@index
+display HTML table
+	users loggin in
+/	users' stocks
+/	users' number of shares
+/	price of stocks
+/	users' total value (share*price)
+/	users' cash balance
+/	users' total (value+balance)
+/	use
+/	SELECT symbol, SUM(share) FROM history WHERE user_id = :user_id GROUP BY symbol
+/		SELECT
+/		GROUP BY
+		HAVING
+/		SUM
+/		WHERE
+-/	share.db
+-/		CREATE TABLE share ('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'user_id' INTEGER NOT NULL, 'symbol' TEXT NOT NULL, 'share' INTEGER NOT NULL);
+
+@sell
+sell stocks
+/	checkbox, symbol with text box, background of owned share
+/	request form checkbox
+/		render apology if blank or no exist
+/		render apology if not positive int, or exceed max
+/	add table in finance.db to track transaction
+/		who, action, what, when
+BONUS
+	buttom for sell all of shares of a stock
+	buttom for sell all shares of all stock
+	by checking the appropriate checkboxes and inputting appropriate values
+
+/@history
+/shows html table summarising all of a user's transactions ever, in rows
+/rows = db.execute("SELECT * FROM history WHERE user_id = :id", id=id)
+/	"SELECT * FROM history WHERE user_id = :id", id=session["user_id"]
+show total expense
+
+BONUS:
+change password
+add cash
+buy/sell of own stocks via index
+/delete account
+other features
+
+HINTS
+cs50.SQL
+execute method, first arg is str of SQL
+return values of commands by execute
+	SELECT, return list of dict
+	INSERT, new primary key
+	DELETE/UPDATE, number of rows
+		if violate some constraint, return None
+		if error, return RuntimeError
+use named bind parameters
+	WHERE name=:name
+	do not use format or +
+
+Testing
+No check50 for this one, but be sure to try to "break" your own site, as by
+inputting alpabetical strings into forms when only numbers are expected,
+inputting zero or negative numbers into forms when only positive numbers are expected,
+inputting floating-point values into forms when only integers are expected,
+trying to spend more cash than a user has,
+trying to sell more shares than a user has,
+inputting an invalid stock symbol, and
+including potentially dangerous characters like ' and ; in SQL queries.
+
+Staff solution
+http://pset7.cs50.net/

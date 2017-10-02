@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Main
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for share in share_rows %}
+                <tr>
+                    <td>{{share.symbol}}</td>
+                    <td>{{share.share}}</td>
+                    {% if share.price %}
+                    <td>{{share.price|usd}}</td>
+                    {% else %}
+                    <td></td>
+                    {% endif %}
+                    <td>{{share.value|usd}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

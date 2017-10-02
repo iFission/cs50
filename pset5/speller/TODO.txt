@@ -1,0 +1,48 @@
+make && ./speller dictionaries/small texts/austinpowers.txt
+make && ./speller texts/austinpowers.txt
+~cs50/pset5/speller texts/austinpowers.txt
+make && ./speller texts/austinpowers.txt > student.txt && diff -y student.txt keys/austinpowers.txt
+check50 2016.speller dictionary.c dictionary.h Makefile
+
+FILES
+speller.c
+spell checker
+
+dictionary.h
+header file for dictionary.c
+
+SPECIFICATIONS
+TODO
+dictionary.c
+load
+/	loads the dictionary
+/		check for '\''
+check
+/	check each word in the text file and prints all misspelled words
+/	case-insensitive
+/		convert all to lower
+	separate by " "
+/	words are only alphabetical/apostrophes
+/		check for '\''
+size
+/	returns the number of words in the dictionary
+unload
+/	free up memory
+
+HINTS
+prevent memory leak
+valgrind --leak-check=full ./speller texts/ralph.txt
+help50 valgrind --leak-check=full ./speller texts/ralph.txt
+
+dictionary file
+	contains valid words, one per line
+	small
+	medium
+	large
+
+
+Take advantage of help50, eprintf, and debug50.
+
+Submit
+cd ~/workspace/pset5/speller/
+submit50 2017/x/speller
