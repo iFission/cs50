@@ -4,6 +4,7 @@
 < bonus
 
 RUN APP
+cd /Volumes/Dropbox/Cloud/Files/Code/cs50/pset8/mashup/
 pip3 install --user -r requirements.txt
 pip3 install --user requests cs50
 export API_KEY=AIzaSyA_gzMENdlKXx7urChR6SZftnRHBb4Relg

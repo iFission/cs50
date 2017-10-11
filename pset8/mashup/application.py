@@ -39,7 +39,7 @@ def articles():
     articles = lookup(postal_code)
     # print(articles)
 
-    return jsonify(articles) # only use 2-7 dictionaries (5 entries)
+    return jsonify(articles) # only use 2-7 dictionaries from rss (5 entries)
 
 @app.route("/search")
 def search():
