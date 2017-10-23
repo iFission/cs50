@@ -34,7 +34,7 @@ def index():
 def articles():
     """Look up articles for geo."""
 
-    postal_code = request.args.get('geo') # get ?geo= parameter from url
+    postal_code = request.args.get('geo') # get ?geo= parameter from localhost:5000/articles?geo=21932
     # print(postal_code)
     articles = lookup(postal_code)
     # print(articles)

@@ -15,6 +15,7 @@ flask run
 mashup
 implement a website that lets user search for articles atop a map
 using google maps and google news
+google map api, sql, rss, python (jinja), ajax, json, javascript, jquery
 
 BACKGROUND
 google maps
@@ -270,3 +271,9 @@ No check50 for this one, but be sure to try to "break" your own site, as by
 	searching with potentially dangerous characters like ' and ;.
 
 staff solution: http://pset8.cs50.net, inspect with HTTP request from Chrome network
+
+submit
+update50
+cd ~/workspace/pset8/mashup/
+submit50 2017/x/pset8
+https://newforms.cs50.net/2017/x/psets/8
