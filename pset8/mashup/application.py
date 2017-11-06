@@ -34,12 +34,12 @@ def index():
 def articles():
     """Look up articles for geo."""
 
-    postal_code = request.args.get('geo') # get ?geo= parameter from localhost:5000/articles?geo=21932
+    postal_code = request.args.get('geo') # get ?geo= parameter from url
     # print(postal_code)
     articles = lookup(postal_code)
     # print(articles)
 
-    return jsonify(articles) # only use 2-7 dictionaries from rss (5 entries)
+    return jsonify(articles) # only use 2-7 dictionaries (5 entries)
 
 @app.route("/search")
 def search():
@@ -95,4 +95,5 @@ def update():
             sw_lat=sw_lat, ne_lat=ne_lat, sw_lng=sw_lng, ne_lng=ne_lng)
 
     # output places as JSON
+    print(rows)
     return jsonify(rows)
