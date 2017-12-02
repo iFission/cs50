@@ -9,8 +9,15 @@ pip3 install --user -r requirements.txt
 pip3 install --user requests cs50
 export API_KEY=AIzaSyA_gzMENdlKXx7urChR6SZftnRHBb4Relg
 export FLASK_APP=application.py
-ln -s /Users/WEIJIE/Library/Python/3.6/bin/flask /usr/local/bin
+ln -s /Users/ALEX/Library/Python/3.6/bin/flask /usr/local/bin
 flask run
+
+20171202
+site works in chrome Version 62.0.3202.94 (Official Build) (64-bit)
+, not in safari Version 11.0.1 (11604.3.5.1.1)
+in safari, works by browsing 127.0.0.1:5000, not localhost:5000
+
+website seems to work with all requirements only with application.py and mashup.db
 
 mashup
 implement a website that lets user search for articles atop a map

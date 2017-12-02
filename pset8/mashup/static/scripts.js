@@ -89,10 +89,10 @@ $(function() {
 function addMarker(place)
 {
     var marker = new google.maps.Marker({
-        position: {lat: 37.4236, lng: -122.1619},
-        // position: {lat: place.latitude, lng: place.longitude},
+        // position: {lat: 37.4236, lng: -122.1619},
+        position: {lat: place.latitude, lng: place.longitude},
         map: map, // directly place map on map created earlier
-        title: place.place_name
+        title: "place.place_name"
     });
 }
 
