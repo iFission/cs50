@@ -4,12 +4,20 @@
 < bonus
 
 RUN APP
+cd /Volumes/Dropbox/Cloud/Files/Code/cs50/pset8/mashup/
 pip3 install --user -r requirements.txt
 pip3 install --user requests cs50
 export API_KEY=AIzaSyA_gzMENdlKXx7urChR6SZftnRHBb4Relg
 export FLASK_APP=application.py
-ln -s /Users/WEIJIE/Library/Python/3.6/bin/flask /usr/local/bin
+ln -s /Users/ALEX/Library/Python/3.6/bin/flask /usr/local/bin
 flask run
+
+20171202
+site works in chrome Version 62.0.3202.94 (Official Build) (64-bit)
+, not in safari Version 11.0.1 (11604.3.5.1.1)
+in safari, works by browsing 127.0.0.1:5000, not localhost:5000
+
+website seems to work with all requirements only with application.py and mashup.db
 
 mashup
 implement a website that lets user search for articles atop a map
@@ -18,9 +26,9 @@ using google maps and google news
 BACKGROUND
 google maps
 https://developers.google.com/maps/documentation/javascript/
-getting started https://developers.google.com/maps/documentation/javascript/tutorial
-markers https://developers.google.com/maps/documentation/javascript/markers
-info windows https://developers.google.com/maps/documentation/javascript/infowindows
+/getting started https://developers.google.com/maps/documentation/javascript/tutorial
+>markers https://developers.google.com/maps/documentation/javascript/markers
+>info windows https://developers.google.com/maps/documentation/javascript/infowindows
 
 google news
 parameters http://i-tweak.blogspot.com/2013/10/google-news-search-parameters-missing.html
@@ -31,12 +39,12 @@ url example
 http://news.google.com/news/
 	section?
 		q= // query keyword
-		hl= // language, eg en
+		hl= // language, eg: en
 		cf=
 		pz=
 		geo= // inputs geo location, accepts place names, postal code
-		ned= // location, eg us
-		redirect=
+		ned= // location, eg: us
+		redirect=true or false
 
 rss
 	output=rss
@@ -49,19 +57,19 @@ news
 	bulleted list of articles' titles and links
 
 jQuery
-	http://learn.jquery.com/using-jquery-core/document-ready/
-	http://learn.jquery.com/using-jquery-core/selecting-elements/
-	http://learn.jquery.com/ajax/jquery-ajax-methods/
+/	http://learn.jquery.com/using-jquery-core/document-ready/
+/	http://learn.jquery.com/using-jquery-core/selecting-elements/
+>	http://learn.jquery.com/ajax/jquery-ajax-methods/
 
 typeahead.js
 	twitter's library plugin, in jQuery
 	adds support for autocompletion to html text fields
-	http://twitter.github.io/typeahead.js/examples/
+>	http://twitter.github.io/typeahead.js/examples/
 		The Basics
 		Custom Templates
 		Scrollable Dropdown Menu
-	https://github.com/corejavascript/typeahead.js/blob/master/doc/jquery_typeahead.md
-	use https://github.com/corejavascript/typeahead.js
+>	https://github.com/corejavascript/typeahead.js/blob/master/doc/jquery_typeahead.md
+>	use https://github.com/corejavascript/typeahead.js
 
 FILES
 templates/index.html
@@ -263,9 +271,9 @@ removeMarkers
 
 Testing
 No check50 for this one, but be sure to try to "break" your own site, as by
-	searching for cities that don’t exist,
-	clicking markers for cities that don’t have any articles,
-	dragging and zooming in and out to update your map’s markers, and
+	searching for cities that donâ€™t exist,
+	clicking markers for cities that donâ€™t have any articles,
+	dragging and zooming in and out to update your mapâ€™s markers, and
 	searching with potentially dangerous characters like ' and ;.
 
-staff solution: http://pset8.cs50.net, inspect with HTTP request from Chrome network
+staff solution: http://mashup.cs50.net, inspect with HTTP request from Chrome network
