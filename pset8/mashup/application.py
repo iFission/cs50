@@ -95,8 +95,5 @@ def update():
             sw_lat=sw_lat, ne_lat=ne_lat, sw_lng=sw_lng, ne_lng=ne_lng)
 
     # output places as JSON
-<<<<<<< HEAD
-=======
     print(rows)
->>>>>>> working-on-pset-8
     return jsonify(rows)
